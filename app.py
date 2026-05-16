@@ -106,7 +106,8 @@ with tab1:
             nbins=40,
             title="Age Distribution"
         )
-            st.plotly_chart(fig,use_container_width=True, width='stretch')
+            with st.container(border=True):
+                st.plotly_chart(fig,use_container_width=True, width='stretch')
 
     with col2:
             fig = px.pie(
@@ -114,7 +115,9 @@ with tab1:
             names="Primary Disease",
             title="Disease by Gender"
         )
-            st.plotly_chart(fig,use_container_width=True, width='stretch')
+        
+            with st.container(border=True):
+                st.plotly_chart(fig,use_container_width=True, width='stretch')
 
     with col3:
             fig = px.scatter(
@@ -123,7 +126,8 @@ with tab1:
             y="Disease Count",
             title="Age vs Disease"
         )
-            st.plotly_chart(fig,use_container_width=True, width='stretch')
+            with st.container(border=True):
+                st.plotly_chart(fig,use_container_width=True, width='stretch')
 
 # =========================================================
 # TAB 2 - GEOGRAPHY (Senegal regions)
@@ -154,13 +158,15 @@ with tab2:
                           )
    
               
-           st.plotly_chart(fig,use_container_width=True, width='stretch')
+           with st.container(border=True):
+                st.plotly_chart(fig,use_container_width=True, width='stretch')
 
     with c2:
             fig = px.line( df,
                           x = 'Patient Age', y= 'Primary Disease',
                           title = "Disease trend by age")
-            st.plotly_chart(fig,use_container_width=True, width = 'stretch')
+            with st.container(border=True):
+                st.plotly_chart(fig,use_container_width=True, width = 'stretch')
 
 
 st.caption("ODIR Dashboard")
