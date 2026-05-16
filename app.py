@@ -142,7 +142,7 @@ with tab2:
 
     with c2:
             fig = px.line( df,
-                          y = 'Age', x= 'Primary Disease',
+                          y = 'Patient Age', x= 'Primary Disease',
                           title = "Disease trend by age")
             st.plotly_chart(fig, width = 'stretch')
 
