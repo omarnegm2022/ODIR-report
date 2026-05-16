@@ -112,7 +112,7 @@ with tab1:
             y="Disease Count",
             title="Age vs Disease"
         )
-        st.plotly_chart(fig, width='stretch')
+            st.plotly_chart(fig, width='stretch')
 
 # =========================================================
 # TAB 2 - GEOGRAPHY (Senegal regions)
