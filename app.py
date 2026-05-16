@@ -103,7 +103,7 @@ with tab1:
             names="Primary Disease",
             title="Disease by Gender"
         )
-        st.plotly_chart(fig, width='stretch')
+            st.plotly_chart(fig, width='stretch')
 
     with col3:
             fig = px.scatter(
