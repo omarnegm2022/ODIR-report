@@ -62,12 +62,12 @@ st.caption("Executive dashboard for Eye disease monitoring")
 # KPI SECTION
 # =========================================================
 col1, col2, col3, col4 = st.columns(4)
-Total_Records = len(main_df.index)
-Total_Patients = len(set(main_df['ID']))
+Total_Records = len(df.index)
+Total_Patients = len(set(df['ID']))
 col1.metric("Total Patients", f"{Total_Patients:,}")
-col2.metric("Normal Rate", f"{main_df['N'].sum() / Total_Records:,}")
-col2.metric("Male Percentage ", f"{len(set(main_df[main_df['Patient Sex'] == 'Male']['ID'])) * 100/ Total_Patients:,}")
-col2.metric("Female Percentage ", f"{len(set(main_df[main_df['Patient Sex'] == 'Female']['ID'])) * 100/ Total_Patients:,}")
+col2.metric("Normal Rate", f"{df['N'].sum() / Total_Records:,}")
+col2.metric("Male Percentage ", f"{len(set(df[df['Patient Sex'] == 'Male']['ID'])) * 100/ Total_Patients:,}")
+col2.metric("Female Percentage ", f"{len(set(df[df['Patient Sex'] == 'Female']['ID'])) * 100/ Total_Patients:,}")
 
 # col3.metric("Retention", f"{len(df)-df['churn_prediction'].sum():,}")
 # col4.metric("Avg Probability", f"{df['churn_probability'].mean():.2%}")
