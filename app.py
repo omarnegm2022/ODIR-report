@@ -62,6 +62,14 @@ st.caption("Executive dashboard for Eye disease monitoring")
 # KPI SECTION
 # =========================================================
 col1, col2, col3, col4 = st.columns(4)
+st.markdown("""
+    <style>
+    /* Target the second column */
+    [data-testid="column"]:nth-child(2) {
+        background-color: white;
+    }
+    </style>
+""", unsafe_allow_html=True)
 Total_Records = len(df.index)
 Total_Patients = len(set(df['ID']))
 col1.metric("Total Patients", f"{Total_Patients:,}")
