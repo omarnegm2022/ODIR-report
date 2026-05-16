@@ -17,39 +17,46 @@ import plotly.express as px
 st.set_page_config(
     page_title="Telecom Customer Churn Prediction Dashboard",
     page_icon="📊",
-    layout="wide",
+    # layout="wide",
 )
 
 # =========================================================
 # STYLING
 # =========================================================
-st.markdown("""
-<style>
-[data-testid="stAppViewContainer"] {
-    background: #262730;
-    color: white;
-}
-.kpi-card {
-    background: #262730;
-}
-.kpi-value {
-    font-weight: bold;
-}
-</style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+# <style>
+# [data-testid="stAppViewContainer"] {
+#     background: #262730;
+#     color: white;
+# }
+# .kpi-card {
+#     background: #262730;
+# }
+# .kpi-value {
+#     font-weight: bold;
+# }
+# </style>
+# """, unsafe_allow_html=True)
 
 # =========================================================
 # HELPERS
 # =========================================================
-
-# =========================================================
-# SIDEBAR
-# =========================================================
-st.sidebar.title("⚙ Dashboard Settings")
-
 csv_path = "./New_df.csv"
 
 df = pd.read_csv(csv_path,index_col = False)
+# =========================================================
+# SIDEBAR
+# =========================================================
+st.sidebar.title("⚙ Single Patient info")
+# st.subheader("Single Customer Prediction")
+with st.form("predict_form"):
+        revenue = st.number_input("Revenue", 0.0, 10000.0, 50.0)
+        regularity = st.number_input("Regularity", 0.0, 31.0, 15.0)
+        frequency = st.number_input("Frequency", 0.0, 100.0, 10.0)
+        data_volume = st.number_input("Data Volume", 0.0, 100000.0, 1000.0)
+
+        submit = st.form_submit_button("Predict")
+
 
 
 # =========================================================
@@ -62,14 +69,15 @@ st.caption("Executive dashboard for Eye disease monitoring")
 # KPI SECTION
 # =========================================================
 col1, col2, col3, col4 = st.columns(4)
-st.markdown("""
-    <style>
-    /* Target the second column */
-    [data-testid="column"]:nth-child(2) {
-        background-color: white;
-    }
-    </style>
-""", unsafe_allow_html=True)
+# st.markdown("""
+#     <style>
+#     /* Target the second column */
+#     [data-testid="column"]:nth-child(2) {
+#         background-color: white;
+#     }
+#     </style>
+# """, unsafe_allow_html=True)
+
 Total_Records = len(df.index)
 Total_Patients = len(set(df['ID']))
 col1.metric("Total Patients", f"{Total_Patients:,}")
@@ -158,25 +166,7 @@ with tab2:
 # =========================================================
 # TAB 3 - PREDICTION
 # =========================================================
-with tab3:
-    st.subheader("Single Customer Prediction")
 
-    with st.form("predict_form"):
-        revenue = st.number_input("Revenue", 0.0, 10000.0, 50.0)
-        regularity = st.number_input("Regularity", 0.0, 31.0, 15.0)
-        frequency = st.number_input("Frequency", 0.0, 100.0, 10.0)
-        data_volume = st.number_input("Data Volume", 0.0, 100000.0, 1000.0)
-
-        submit = st.form_submit_button("Predict")
-
-    if submit:
-      pass  
-      # input_df = pd.DataFrame({
-      #       "revenue": [revenue],
-      #       "regularity": [regularity],
-      #       "frequence": [frequency],
-      #       "data_volume": [data_volume]
-      #   })
 
 
 # =========================================================
@@ -184,4 +174,4 @@ with tab3:
 # =========================================================
 
 
-st.caption("Telecom Customer Churn Dashboard")
+st.caption("ODIR Dashboard")
