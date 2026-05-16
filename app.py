@@ -26,11 +26,11 @@ st.set_page_config(
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
-    background: #0b0b12;
+    background: #0068c9;
     color: white;
 }
 .kpi-card {
-    background: #151522;
+    background: #262730;
 }
 .kpi-value {
     font-weight: bold;
@@ -142,7 +142,7 @@ with tab2:
 
     with c2:
             fig = px.line( df,
-                          y = 'Patient Age', x= 'Primary Disease',
+                          x = 'Patient Age', y= 'Primary Disease',
                           title = "Disease trend by age")
             st.plotly_chart(fig, width = 'stretch')
 
