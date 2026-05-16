@@ -5,7 +5,9 @@
 import os
 import streamlit as st
 import pandas as pd
-import numpy as np
+# import numpy as np
+import plotly.express as px
+
 
 
 
@@ -93,7 +95,7 @@ with tab1:
             nbins=40,
             title="Age Distribution"
         )
-        st.plotly_chart(fig, width='stretch')
+            st.plotly_chart(fig, width='stretch')
 
     with col2:
             fig = px.pie(
