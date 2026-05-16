@@ -81,7 +81,7 @@ tab1, tab2, tab3, tab4 = st.tabs([    "📊 Trends",    "🌍 Geography",    "�
 # TAB 1 - TRENDS
 # =========================================================
 with tab1:
-    col1, col2, col3 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
 
     with col1:
             fig = px.histogram(
