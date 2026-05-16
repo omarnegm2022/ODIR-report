@@ -17,7 +17,7 @@ import plotly.express as px
 st.set_page_config(
     page_title="Telecom Customer Churn Prediction Dashboard",
     page_icon="📊",
-    # layout="wide",
+    layout="wide",
 )
 
 # =========================================================
@@ -55,7 +55,7 @@ with st.form("predict_form"):
         frequency = st.sidebar.number_input("Frequency", 0.0, 100.0, 10.0)
         data_volume = st.sidebar.number_input("Data Volume", 0.0, 100000.0, 1000.0)
 
-        submit = st.form_submit_button("Submit")
+        submit = st.sidebar.button("Submit")
 
 
 
