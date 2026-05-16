@@ -50,12 +50,12 @@ df = pd.read_csv(csv_path,index_col = False)
 st.sidebar.title("⚙ Single Patient info")
 # st.subheader("Single Customer Prediction")
 with st.form("predict_form"):
-        revenue = st.number_input("Revenue", 0.0, 10000.0, 50.0)
-        regularity = st.number_input("Regularity", 0.0, 31.0, 15.0)
-        frequency = st.number_input("Frequency", 0.0, 100.0, 10.0)
-        data_volume = st.number_input("Data Volume", 0.0, 100000.0, 1000.0)
+        revenue = st.sidebar.number_input("Revenue", 0.0, 10000.0, 50.0)
+        regularity = st.sidebar.number_input("Regularity", 0.0, 31.0, 15.0)
+        frequency = st.sidebar.number_input("Frequency", 0.0, 100.0, 10.0)
+        data_volume = st.sidebar.number_input("Data Volume", 0.0, 100000.0, 1000.0)
 
-        submit = st.form_submit_button("Predict")
+        submit = st.sidebar.form_submit_button("Predict")
 
 
 
