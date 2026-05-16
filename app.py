@@ -78,8 +78,8 @@ col2.metric("Female Percentage ", f"{len(set(df[df['Patient Sex'] == 'Female']['
 tab1, tab2, tab3, tab4 = st.tabs([
     "📊 Trends",
     "🌍 Geography"
-    # "🔍 Predict",
-    # "📈 Model"
+    "🔍 Predict",
+    "📈 Model"
 ])
 
 # =========================================================
