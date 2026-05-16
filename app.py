@@ -26,7 +26,7 @@ st.set_page_config(
 st.markdown("""
 <style>
 [data-testid="stAppViewContainer"] {
-    background: #0068c9;
+    background: #262730;
     color: white;
 }
 .kpi-card {
